@@ -17,7 +17,7 @@ with st.sidebar:
     st.markdown("<h1 style='text-align: center;'>Home</h1>", unsafe_allow_html=True)
 
 #image_path = '/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/logo.png'
-image = Image.open('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/logo2.png')
+image = Image.open('logo2.png')
 st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")

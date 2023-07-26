@@ -14,7 +14,7 @@ with st.sidebar:
 #=====================================================================================================================  
 # Carrega a imagem
 #=====================================================================================================================
-image = Image.open('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/logo2.png')
+image = Image.open('logo2.png')
 st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")
@@ -36,7 +36,7 @@ if uploaded_file is not None:
 #função para criar um banco de dados
 def criar_banco_dados(dados):
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx')
+        df = pd.read_excel('dataset/banco_dados.xlsx')
         df = df.append(dados, ignore_index=True)
     except FileNotFoundError:
         df = pd.DataFrame(dados, columns=['CPF', 'PIS', 'COLABORADOR'])
@@ -44,18 +44,18 @@ def criar_banco_dados(dados):
     # Remover aspas e colchetes dos valores
     df = df.applymap(lambda x: x[0] if isinstance(x, list) else x)
     
-    df.to_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx', index=False)
+    df.to_excel('dataset/banco_dados.xlsx', index=False)
 
 #função para excluir colaborador
 def excluir_colaborador(cpf_colaborador):
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx')
+        df = pd.read_excel('dataset/banco_dados.xlsx')
 
         if cpf_colaborador not in df['CPF'].values:
             raise ValueError("CPF não encontrado no banco de dados!")
 
         df = df[df['CPF'] != cpf_colaborador]
-        df.to_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx', index=False)
+        df.to_excel('dataset/banco_dados.xlsx', index=False)
         return True
     except FileNotFoundError:
         return False

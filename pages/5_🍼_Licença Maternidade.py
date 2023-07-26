@@ -17,7 +17,7 @@ with st.sidebar:
     st.markdown("<h1 style='text-align: center;'>Licença Maternidade</h1>", unsafe_allow_html=True)
 
 #image_path = '/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/logo.png'
-image = Image.open('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/logo2.png')
+image = Image.open('logo2.png')
 st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")
@@ -78,7 +78,7 @@ if uploaded_file is not None:
 #função para criar um banco de dados ferias
 def criar_banco_dados_ferias(dados):
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx')
+        df = pd.read_excel('dataset/banco_dados_licenca.xlsx')
         df = df.append(dados, ignore_index=True)
     except FileNotFoundError:
         df = pd.DataFrame(dados, columns=['COLABORADOR'])
@@ -86,18 +86,18 @@ def criar_banco_dados_ferias(dados):
     # Remover aspas e colchetes dos valores
     df = df.applymap(lambda x: x[0] if isinstance(x, list) else x)
     
-    df.to_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx', index=False)
+    df.to_excel('dataset/banco_dados_licenca.xlsx', index=False)
 
 #função para excluir colaborador
 def excluir_colaborador(colaborador):
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx')
+        df = pd.read_excel('dataset/banco_dados_licenca.xlsx')
 
         if colaborador not in df['COLABORADOR'].values:
             raise ValueError("COLABORADOR não encontrado no banco de dados!")
 
         df = df[df['COLABORADOR'] != colaborador]
-        df.to_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx', index=False)
+        df.to_excel('dataset/banco_dados_licenca.xlsx', index=False)
         return True
     except FileNotFoundError:
         return False
@@ -136,7 +136,7 @@ def main():
     st.markdown("""----""")
     st.markdown("## Lista de Licença Maternidade")
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx')
+        df = pd.read_excel('dataset/banco_dados_licenca.xlsx')
         st.table(df)
     except FileNotFoundError:
         st.warning('Nenhum dado encontrado no banco de dados de férias.')
