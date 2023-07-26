@@ -5,6 +5,8 @@ import datetime
 from datetime import datetime
 import openpyxl
 from PIL import Image
+
+st.set_page_config(page_title="Rh Data Science", page_icon="🎲")
 #=====================================================================================================================
 # centraliza o texto na sidebar
 #st.sidebar.markdown('# Rh Data Science')
