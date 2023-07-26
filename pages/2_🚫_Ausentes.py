@@ -22,7 +22,7 @@ st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")
 
-st.title('Ponto Eletrônico')
+st.title('Funcionários ausentes')
 
 #======================================================================================================================
 # IMPORTANDO O PRIMEIRO DATASET
@@ -85,7 +85,7 @@ if uploaded_file is not None:
     faltas = df4[df_aux].reset_index()
     
 #======================================================================================================================
-    st.markdown('### Funcionários ausentes')
+    #st.markdown('### Funcionários ausentes')
     with st.container():
         faltas = faltas[['COLABORADOR']]
         st.table(faltas)
