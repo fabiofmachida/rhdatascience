@@ -22,7 +22,7 @@ st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")
 
-st.title('Ponto Eletrônico')
+st.title('Funcionários Presentes')
 
 #======================================================================================================================
 # IMPORTANDO O PRIMEIRO DATASET
@@ -87,7 +87,7 @@ if uploaded_file is not None:
 #======================================================================================================================
 # Filtro para selecionar funcionários
 #======================================================================================================================
-    st.markdown('### Funcionários Presentes')
+    #st.markdown('### Funcionários Presentes')
     with st.container():
         presentes = df5
         st.table(presentes)
