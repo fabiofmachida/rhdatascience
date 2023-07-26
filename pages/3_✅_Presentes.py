@@ -9,6 +9,7 @@ import pandas as pd
 from PIL import Image
 from streamlit_folium import folium_static
 
+st.set_page_config(page_title="Rh Data Science", page_icon="🎲")
 ##=====================================================================================================================
 # Side Bar Streamlit
 #======================================================================================================================
