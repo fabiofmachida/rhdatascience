@@ -101,28 +101,6 @@ def main():
         st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']))
     except FileNotFoundError:
         st.warning('Nenhum dado encontrado no banco de dados.')
-
-    # Função para converter o DataFrame em um arquivo Excel
-    def convert_df_to_excel(df):
-        # Salva o DataFrame em um arquivo Excel
-        buffer = pd.ExcelWriter('banco_dados.xlsx', engine='xlsxwriter')
-        df.to_excel(buffer, index=False, sheet_name='Sheet1')
-        buffer.save()
-        with open('dataset/banco_dados.xlsx', 'rb') as file:
-            return file.read()
-    
-    # Carregue o arquivo do Excel em um DataFrame
-    file_path = 'dataset/banco_dados.xlsx'
-    df = pd.read_excel(file_path)
-    
-    # Exiba o botão de download do arquivo Excel
-    excel = convert_df_to_excel(df)
-    st.download_button(
-        label="Download data as Excel",
-        data=excel,
-        file_name='banco_dados.xlsx',
-        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    )
         
 if __name__ == '__main__':
     main()
