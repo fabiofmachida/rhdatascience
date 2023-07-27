@@ -98,7 +98,7 @@ def main():
     st.markdown("## Lista de Funcionários")
     try:
         df = pd.read_excel('dataset/banco_dados.xlsx')
-        st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']))
+        st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']).reset_index())
     except FileNotFoundError:
         st.warning('Nenhum dado encontrado no banco de dados.')
         
