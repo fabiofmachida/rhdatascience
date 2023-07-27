@@ -23,7 +23,7 @@ st.sidebar.image(image, width=250)
 
 st.sidebar.markdown("""----""")
 
-st.title('Funcionários ausentes')
+st.title('Funcionários Ausentes')
 
 #======================================================================================================================
 # IMPORTANDO O PRIMEIRO DATASET
