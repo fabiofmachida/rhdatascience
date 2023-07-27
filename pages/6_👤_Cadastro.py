@@ -97,7 +97,7 @@ def main():
     st.markdown("""----""")
     st.markdown("## Lista de Funcionários")
     try:
-        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx')
+        df = pd.read_excel('dataset/banco_dados.xlsx')
         st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']))
     except FileNotFoundError:
         st.warning('Nenhum dado encontrado no banco de dados.')
