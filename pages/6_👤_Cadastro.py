@@ -98,7 +98,16 @@ def main():
     st.markdown("## Lista de Funcionários")
     try:
         df = pd.read_excel('dataset/banco_dados.xlsx')
-        st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS'])).reset_index()
+        #st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']).reset_index())
+
+        # Ordenar o DataFrame pelas colunas 'COLABORADOR', 'CPF' e 'PIS'
+        df_sorted = df.sort_values(['COLABORADOR', 'CPF', 'PIS'])
+
+        # Resetar o índice para que o índice padrão não seja exibido
+        df_sorted_reset_index = df_sorted.reset_index(drop=True)
+
+        # Exibir a tabela no Streamlit sem o índice
+        st.table(df_sorted_reset_index)
     except FileNotFoundError:
         st.warning('Nenhum dado encontrado no banco de dados.')
         
