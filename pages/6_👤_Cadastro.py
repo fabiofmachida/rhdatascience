@@ -92,7 +92,16 @@ def main():
                 st.success(f'CPF "{cpf_para_excluir}" excluído com sucesso!')
             else:
                 st.error(f'Erro ao excluir o colaborador "{cpf_para_excluir}".')
-                
+    # Ler os dados do banco de dados de férias e exibir na tabela
+    #/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados_licenca.xlsx
+    st.markdown("""----""")
+    st.markdown("## Lista de Funcionários")
+    try:
+        df = pd.read_excel('/Users/fabiomachida/Comunidade DS/repos/poupatempo/extrato_ponto/dataset/banco_dados.xlsx')
+        st.table(df.sort_values(['COLABORADOR', 'CPF', 'PIS']))
+    except FileNotFoundError:
+        st.warning('Nenhum dado encontrado no banco de dados.')
+        
 if __name__ == '__main__':
     main()
    
