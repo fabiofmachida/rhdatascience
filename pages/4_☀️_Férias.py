@@ -123,7 +123,7 @@ def main():
     
     
      # Criar caixa de texto para inserir o nome do colaborador a ser excluído
-    colaborador_para_excluir = st.text_input('COLABORADOR do Colaborador para Excluir')
+    colaborador_para_excluir = st.text_input('NOME do Colaborador para Excluir')
     
     # Criar botão para excluir o colaborador
     if st.button('Excluir Colaborador'):
