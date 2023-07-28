@@ -110,7 +110,7 @@ def main():
     st.title('Cadastro de Funcionária de Licença Maternidade')
 
     # Criar caixas de texto para inserir os dados
-    colaborador = st.text_input('COLABORADOR', key='colaborador_input', value='')
+    colaborador = st.text_input('COLABORADORA', key='colaborador_input', value='')
     
     # Criar botão para salvar os dados no Excel
     if st.button('Salvar Cadastro'):
