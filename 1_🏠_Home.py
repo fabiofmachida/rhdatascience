@@ -32,9 +32,9 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, delimiter='\t')
 
 # Excluir após 15 dias
-st.info('Novidade!! Cadastro de Funcionário. 👤', icon="⭐️")
-st.info('Novidade!! Cadastro de Férias. ☀️', icon="⭐️")
-st.info('Novidade!! Cadastro de Licença Maternidade. 🍼', icon="⭐️")
+#st.info('Novidade!! Cadastro de Funcionário. 👤', icon="⭐️")
+#st.info('Novidade!! Cadastro de Férias. ☀️', icon="⭐️")
+#st.info('Novidade!! Cadastro de Licença Maternidade. 🍼', icon="⭐️")
 
 st.title('Rh Data Science')
 
