@@ -66,10 +66,10 @@ st.markdown(
     ### Suporte
     - Consultar a Administração:
         - @LeonardoDelVechio
-        - @IvoneSantos
+        - @GabrielJunior
     
 """)
 
 st.markdown("""----""") 
-st.markdown("""Atualizado 19/07/2023""") 
-st.markdown("""Build 2.0""")
+st.markdown("""Atualizado 18/06/2024""") 
+st.markdown("""Build 3.0""")
